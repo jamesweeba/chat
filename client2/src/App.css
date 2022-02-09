@@ -1,0 +1,66 @@
+.App {
+    text-align: center;
+}
+
+.App-logo {
+    height: 40vmin;
+    pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+        animation: App-logo-spin infinite 20s linear;
+    }
+}
+
+.App-header {
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+}
+
+.sender {
+    margin-left: 597px;
+    margin-top: 10px;
+}
+.message-content{
+  flex-wrap: wrap;
+  word-wrap:break-word;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  margin-left: 5px;
+  display: flex;
+  font-weight: bold;
+  font-style: italic;
+
+}
+
+#you.message-content{
+    display: flex;
+}
+#you{
+    justify-content: flex-start; 
+    width: 100px;
+}
+#other{
+    justify-content: flex-end; 
+}
+#other.message-content{
+    justify-content: flex-end; 
+     margin-right: 100px;
+ 
+}
+.foc:focus{
+    background-color: red;
+}
+
+.logout {
+    float:right;
+}
+a:focus{
+    background-color:blue;
+}
