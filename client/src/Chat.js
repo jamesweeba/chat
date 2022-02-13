@@ -29,15 +29,10 @@ function Chat({ socket, user, logout, isAuthenticated }) {
         })
 
     }
-
-
-
     useEffect(() => {
         socket.on("users", (data) => {
             setUsers(data)
-
         });
-
         socket.on("private", (data) => {
             _private.push(data);
             setAppendMessage(data)
