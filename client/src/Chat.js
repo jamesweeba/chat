@@ -15,17 +15,17 @@ function Chat({ socket, user, logout, isAuthenticated }) {
     let [currentMessage, setCurrentMessage] = useState("");
     let [selectUser, setSelectedUser] = useState({})
     let [appendMessage, setAppendMessage] = useState([]);
-    let [error,setErrors]=useState("");
+    let [error, setErrors] = useState("");
 
     if (isAuthenticated) {
         //https://fridge-ger.herokuapp.com/api/v1/users
-        let url=  `https://fridge-ger.herokuapp.com/api/v1/users`||`/api/v1/users`
+        let url = `https://fridge-ger.herokuapp.com/api/v1/users` || `/api/v1/users`
         axios.post(url, user).then(res => {
             return res;
-        }).then(res=>{
-           console.log(res)
-        }).catch(err=>{
-           console.log(err);
+        }).then(res => {
+            console.log(res)
+        }).catch(err => {
+            console.log(err);
         })
 
     }
@@ -46,14 +46,13 @@ function Chat({ socket, user, logout, isAuthenticated }) {
         console.log(selectuser);
     }
     let handleSendMessage = () => {
-        let {username}=selectUser;
-        if (currentMessage&& username) {
+        let { username } = selectUser;
+        if (currentMessage && username) {
             let message = { "message": currentMessage, to: selectUser, "toperson": selectUser.username, "fromperson": user.email }
             socket.emit("sendmessage", message);
-            //make axios call
-        }else{
+            setErrors("")
+        } else {
             setErrors("PLEASE SELECT A USER FIRST AND TYPE TO CHAT")
- 
         }
     }
 

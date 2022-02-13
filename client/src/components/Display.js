@@ -14,7 +14,7 @@ function Display({handleChange,logout,appendMessage,user})  {
         }
         let mainpanel = {
             "width": "742px",
-            "height": "218px",
+            "height": "550px",
             "border": "1px solid",
             "overflow-y": "scroll"
         }
@@ -32,7 +32,7 @@ function Display({handleChange,logout,appendMessage,user})  {
         return (
             <div style={stye}>
                 <div className="w3-container w3-teal">
-                    <h1>Hello  ${user.name}</h1>
+                    <h1>Hello  {user.name}</h1>
                     <Logout className="logout" logout={logout}/>
                 </div>
                 <div className="w3-container">
