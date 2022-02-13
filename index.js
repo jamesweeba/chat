@@ -31,19 +31,18 @@ if(process.env.NODE_ENV==="production"){
     // })
 }
 var content = [];
-
-
 const server = http.createServer(app);
 
 let io = require("socket.io")(server, {cors: {origin: "*"}});
 
 
 io.on("connection", (socket) => {
-    const users = [];
-   
+    let users = [];
     for (let [id, socket] of io.of("/").sockets) {
         users.push({ user_id: id, username: socket.handshake.auth.name });
     }
+    users = [...new Map(users.map(item =>
+        [item["username"], item])).values()];
     io.sockets.emit("users", users)
     console.log("coonected", users)
     socket.emit("connected", users);
