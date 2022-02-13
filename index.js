@@ -32,10 +32,7 @@ if(process.env.NODE_ENV==="production"){
 }
 var content = [];
 const server = http.createServer(app);
-
 let io = require("socket.io")(server, {cors: {origin: "*"}});
-
-
 io.on("connection", (socket) => {
     let users = [];
     for (let [id, socket] of io.of("/").sockets) {
