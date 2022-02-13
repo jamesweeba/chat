@@ -69,3 +69,13 @@ font-style: italic;
 a:focus{
   background-color:blue;
 }
+
+.center-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: red;
+
+}

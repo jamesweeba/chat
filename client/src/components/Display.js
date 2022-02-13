@@ -32,7 +32,7 @@ function Display({handleChange,logout,appendMessage,user})  {
         return (
             <div style={stye}>
                 <div className="w3-container w3-teal">
-                    <h1>MESSAGES </h1>
+                    <h1>Hello  ${user.name}</h1>
                     <Logout className="logout" logout={logout}/>
                 </div>
                 <div className="w3-container">
